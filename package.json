@@ -1,0 +1,35 @@
+{
+  "private": true,
+  "author": "MR Shen",
+  "scripts": {
+    "build": "umi build",
+    "dev": "umi dev",
+    "postinstall": "umi setup",
+    "lint": "umi lint",
+    "setup": "umi setup",
+    "start": "cross-env REACT_APP_ENV=zhpc npm run dev"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write",
+    "*.{js,jsx,ts,tsx,css,less}": [
+      "umi lint"
+    ]
+  },
+  "dependencies": {
+    "antd": "^4.24.1",
+    "axios": "^1.1.3",
+    "umi": "^4.0.28"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@umijs/lint": "^4.0.30",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.27.0",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.0.3",
+    "prettier": "2.7.1",
+    "stylelint": "^14.14.1",
+    "typescript": "^4.1.2"
+  }
+}
