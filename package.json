@@ -5,14 +5,13 @@
     "build": "umi build",
     "dev": "umi dev",
     "postinstall": "umi setup",
-    "lint": "umi lint",
     "setup": "umi setup",
     "start": "cross-env REACT_APP_ENV=zhpc npm run dev",
     "prepare": "husky install"
   },
   "lint-staged": {
-    "**/*": "prettier --write",
     "*.{js,jsx,ts,tsx,css,less}": [
+      "prettier --write",
       "umi lint"
     ]
   },

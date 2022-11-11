@@ -2,15 +2,16 @@ import React, { useEffect } from 'react'
 import dog from '@/assets/yay.jpg'
 
 const Home: React.FC = () => {
-  // const a = "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbvehwfgewuifwfhewiufhewiufgewiufgewyfgewfugewyfgewfyg";
-  // let b = a;
-  // console.log(b, "hhhhhhh");
+  const a =
+    'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbvehwfgewuifwfhewiufhewiufgewiufgewyfgewfugewyfgewfyg'
+  let b = a
+  console.log(b, 'hhhhhhh')
 
   let con = { content: 1, list: ['file', 'task'] }
   let treeList = [
     {
-      title: 'one',
-      key: 'one',
+      title: 'task',
+      key: 'tas',
       children: [],
     },
     {
@@ -20,10 +21,12 @@ const Home: React.FC = () => {
         {
           title: 'task',
           key: 'task',
-          children: [{
-            title: 'aaa',
-            key: 'aaa'
-          }],
+          children: [
+            {
+              title: 'aaa',
+              key: 'aaa',
+            },
+          ],
         },
       ],
     },
@@ -35,24 +38,22 @@ const Home: React.FC = () => {
   ]
 
   const takeData = (a: any, b: any[]) => {
-    console.log('data', a,b);
+    console.log('data', a, b)
     b.forEach((item: any) => {
       if (item.children && item.children.length) {
         takeData(a, item.children)
       } else {
-        if (item.title === 'task'){
+        if (item.title === 'task') {
           item.children.push(a)
         }
       }
     })
-    console.log('b', b);
-    
+    console.log('b', b)
   }
 
   useEffect(() => {
     takeData(con, treeList)
   }, [])
-
 
   return <img src={dog} alt='....' />
 }
